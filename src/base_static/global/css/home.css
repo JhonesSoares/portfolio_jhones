@@ -49,39 +49,28 @@ section.home {
   align-items: center;
   justify-self: center;
   margin-top: 3rem;
+  transition: color 0.4s;
+}
+.home__scroll::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  width: 15%;
+  height: 2px;
+  background-color: var(--first-color-light);
+  transition: width 0.3s;
+}
+.home__scroll:hover {
+  color: var(--first-color-light);
 }
 
-.home__scroll-box {
-  background-color: var(--first-color);
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  font-size: 1.5rem;
-  overflow: hidden;
-  border-radius: 5px;
+.home__scroll:hover::after {
+  width: 100%;
 }
+
 .home__scroll-text {
   font-weight: var(--font-semi-bold);
-}
-.home__scroll-box i {
-  animation: scroll-down ease-in-out 3s infinite;
-}
-
-/* Animate scroll icon */
-@keyframes scroll-down {
-  0% {
-    transform: translateY(-1rem);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0.6rem);
-    opacity: 0;
-  }
 }
 
 /*=============== BUTTON ===============*/
