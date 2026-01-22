@@ -1,0 +1,67 @@
+/*=============== INFO ===============*/
+.info__container {
+  row-gap: 3rem;
+}
+
+.info__title {
+  position: relative;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+.about {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.about__description {
+  margin-bottom: 2rem;
+}
+
+.about__description b {
+  color: var(--first-color-light);
+}
+
+.about__img {
+  width: 250px;
+  justify-self: center;
+  mask-image: linear-gradient(
+    to bottom,
+    hsla(var(--hue), 40%, 16%) 60%,
+    transparent 100%
+  );
+}
+
+/* SKILLS */
+.skills {
+  margin: 0 auto;
+  text-align: center;
+}
+.skills__img {
+  width: 35px;
+  margin-bottom: 0.5rem;
+}
+
+.skills__name {
+  font-size: var(--small-font-size);
+}
+
+.skills__content {
+  grid-template-columns: repeat(3, max-content);
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.skills__box {
+  display: grid;
+  place-items: center;
+  transition: transform 0.4s;
+}
+
+.skills__box:hover {
+  transform: translateY(-0.25rem);
+}
