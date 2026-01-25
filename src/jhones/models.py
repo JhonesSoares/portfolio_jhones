@@ -1,5 +1,7 @@
 from django.db import models
 
+from utils.image_size import imageSize
+
 
 # Create your models here.
 class SectionProjects(models.Model):
@@ -8,6 +10,13 @@ class SectionProjects(models.Model):
     cover = models.ImageField(
         upload_to="jhones/covers/%Y/%m/%d/", blank=True, default=""
     )
+    image = imageSize()
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        if self.cover:
+            self.image.resize_image(self.cover, 800)
 
     def __str__(self):
         return self.title
@@ -18,6 +27,13 @@ class Skills(models.Model):
     cover = models.ImageField(
         upload_to="jhones/covers/%Y/%m/%d/", blank=True, default=""
     )
+    image = imageSize()
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        if self.cover:
+            self.image.resize_image(self.cover, 100)
 
     def __str__(self):
-        return self.title
+        return self.name

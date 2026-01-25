@@ -1,0 +1,41 @@
+<!--==================== INFO ====================-->
+      <section class="info section" id="info">
+        {% load static %}
+        <h2 class="section__title">MINHAS INFO</h2>
+
+        <div class="info__container container grid">
+          <!--ABOUT-->
+          <div class="about grid">
+
+            <div class="about__content">
+              <h3 class="info__title">Sobre</h3>
+              <p class="about__description">
+                Sou um desenvolvedor apaixonado por tecnologia, com conhecimentos sólidos em desenvolvimento de aplicações <b>Web</b> e <b>Softwares</b>. Possuo experiência no uso de linguagens de programação, frameworks, bancos de dados e plataformas de containers como Docker.
+              </p>
+
+              <a href="assets/pdf/Tailor-Cv.pdf" download="" target="_blank" class="button about__button">Download CV</a>
+            </div>
+
+            <!--<img src="assets/img/info-perfil.png" alt="image" class="about__img"> -->
+          </div>
+
+          <!--EXPERIENCE-->
+
+
+          <!--SKILLS-->
+          <div class="skills">
+            <h3 class="info__title">Skills</h3>
+
+            <div class="skills__content grid">
+
+              {% for info_skill in info_skills %}
+                <div class="skills__box">
+                  <img src="{{ info_skill.cover.url }}" alt="image" class="skills__img">
+                  <span class="skills__name">{{ info_skill.name }}</span>
+                </div>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </section>
