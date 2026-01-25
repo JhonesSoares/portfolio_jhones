@@ -37,3 +37,20 @@ class Skills(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class MyServices(models.Model):
+    title = models.CharField(max_length=65)
+    description = models.CharField(max_length=265)
+
+    def __str__(self):
+        return self.title
+
+
+class Social(models.Model):
+    name = models.CharField(max_length=65)
+    icon = models.CharField(max_length=100)
+    url = models.CharField(max_length=265)
+
+    def __str__(self):
+        return self.name
