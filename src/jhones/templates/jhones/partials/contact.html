@@ -4,14 +4,15 @@
 
         <div class="contact__container container grid">
 
-          <form action="" class="contact__form grid" id="contact-form">
+          <form method="POST" action="" class="contact__form grid" id="contact-form">
+            {% csrf_token %}
 
             <div class="contact__group grid">
-              <input type="text" name="" placeholder="Name" required class="contact__input">
-              <input type="email" name="" placeholder="Email" required class="contact__input">
+              <input name="contact_name" type="text" name="" placeholder="Name" required class="contact__input">
+              <input name="email" type="email" name="" placeholder="Email" required class="contact__input">
             </div>
 
-            <textarea name="" placeholder="Message" required class="contact__input contact__area"></textarea>
+            <textarea name="text_message" placeholder="Message" required class="contact__input contact__area"></textarea>
 
             <button type="submit" class="button contact__button">Send message</button>
 

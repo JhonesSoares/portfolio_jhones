@@ -11,6 +11,10 @@ def home(request: HttpRequest) -> HttpResponse:
     services = MyServices.objects.all().order_by("id")
     contacts = Social.objects.all().order_by("id")
 
+    if request.method == "POST":
+        form = request.POST
+        print(form)
+
     return render(
         request,
         "jhones/pages/home.html",
