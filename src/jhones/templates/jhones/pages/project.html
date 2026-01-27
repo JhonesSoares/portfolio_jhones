@@ -3,5 +3,27 @@
 {% block title %}Projetos | Jhones{% endblock title %}
 
 {% block content %}
-  <h1 class="texto_projetos">Pagina dos Projetos</h1>
+
+      <section class="work section" id="work">
+        <h2 class="section__title">PROJETO</h2>
+
+        <div class="work__container container grid">
+          
+            <article class="work__card">
+              <a href="{% url "jhones:projeto" section_project.id %}" target="_blank" class="work__link">
+
+                <h2 class="work__title">{{ section_project.title }}</h2>
+                <img src="{{ section_project.cover.url }}" alt="image" class="work__img">
+                
+              </a>
+            </article>
+
+            <article>
+              <p>{{ section_project.text }}</p>   
+            </article>
+          
+        </div>
+
+      </section>
+
 {% endblock content %}

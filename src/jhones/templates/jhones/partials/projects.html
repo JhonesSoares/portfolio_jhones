@@ -3,10 +3,9 @@
         <h2 class="section__title">PROJETOS</h2>
 
         <div class="work__container container grid">
-
           {% for section_project in section_projects %}
             <article class="work__card">
-              <a href="#" target="_blank" class="work__link">
+              <a href="{% url "jhones:projeto" section_project.id %}" class="work__link">
                 <h2 class="work__title">{{ section_project.title }}</h2>
                 <p class="work__description">
                   {{ section_project.description }}
@@ -16,7 +15,6 @@
               </a>
             </article>
           {% endfor %}
-
         </div>
 
       </section>

@@ -3,28 +3,28 @@
   <!-- Menu expansível (nav) -->
 
   <nav class="nav container">
-    <a href="" class="nav__logo">Jhones</a>
+    <a href="{% url "jhones:home" %}" class="nav__logo">Jhones</a>
 
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list">
         <li>
-          <a href="" class="nav__link active-link">Home</a>
+          <a href="{% url "jhones:home" %}" class="nav__link active-link">Home</a>
         </li>
 
         <li>
-          <a href="#work" class="nav__link">Projetos</a>
+          <a href="{% url "jhones:home" %}#work" class="nav__link">Projetos</a>
         </li>
 
         <li>
-          <a href="#info" class="nav__link">Sobre</a>
+          <a href="{% url "jhones:home" %}#info" class="nav__link">Sobre</a>
         </li>
 
         <li>
-          <a href="#services" class="nav__link">Serviços</a>
+          <a href="{% url "jhones:home" %}#services" class="nav__link">Serviços</a>
         </li>
 
         <li>
-          <a href="#contact" class="nav__link">Contate-me</a>
+          <a href="{% url "jhones:home" %}#contact" class="nav__link">Contato</a>
         </li>
       </ul>
 

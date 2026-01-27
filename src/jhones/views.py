@@ -1,3 +1,6 @@
+from django.conf import settings
+from django.contrib import messages
+from django.core.mail import EmailMessage
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 
@@ -12,8 +15,31 @@ def home(request: HttpRequest) -> HttpResponse:
     contacts = Social.objects.all().order_by("id")
 
     if request.method == "POST":
-        form = request.POST
-        print(form)
+        name = request.POST.get("contact_name")
+        email = request.POST.get("email")
+        message = request.POST.get("text_message")
+
+        assunto = f"📩 Nova mensagem do portfólio — {name}"
+
+        corpo = f"""
+        Você recebeu uma nova mensagem do seu portfólio:
+
+        Nome: {name}
+        Email: {email}
+
+        Mensagem:
+        {message}
+        """
+        email_msg = EmailMessage(
+            subject=assunto,
+            body=corpo,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=[settings.DEFAULT_FROM_EMAIL],
+        )
+        email_msg.send()
+        messages.success(
+            request, "Mensagem enviada com sucesso! Em breve entrarei em contato."
+        )
 
     return render(
         request,
@@ -27,8 +53,13 @@ def home(request: HttpRequest) -> HttpResponse:
     )
 
 
-def project(request: HttpRequest) -> HttpResponse:
+def project(request: HttpRequest, id: int) -> HttpResponse:
+    section_project = SectionProjects.objects.filter(pk=id).order_by("-id").first()
+
     return render(
         request,
         "jhones/pages/project.html",
+        context={
+            "section_project": section_project,
+        },
     )

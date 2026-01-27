@@ -68,3 +68,14 @@
   font-weight: var(--font-semi-bold);
   color: var(--title-color);
 }
+
+.alert {
+  text-align: center;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.alert-success {
+  color: var(--first-color-light);
+}
