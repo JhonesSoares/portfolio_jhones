@@ -7,6 +7,10 @@
   background-color: var(--first-color);
 }
 
+#work_text {
+  text-align: justify;
+}
+
 .work__link {
   display: block;
   position: relative;

@@ -11,7 +11,7 @@ class SectionProjects(models.Model):
         upload_to="jhones/covers/%Y/%m/%d/", blank=True, default=""
     )
     image = imageSize()
-    text = models.TextField(max_length=500, blank=True, null=True)
+    text = models.TextField(max_length=600, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

@@ -9,7 +9,7 @@ from .models import MyServices, SectionProjects, Skills, Social
 
 # Create your views here.
 def home(request: HttpRequest) -> HttpResponse:
-    section_projects = SectionProjects.objects.all().order_by("-id")
+    section_projects = SectionProjects.objects.all().order_by("id")
     info_skills = Skills.objects.all().order_by("id")
     services = MyServices.objects.all().order_by("id")
     contacts = Social.objects.all().order_by("id")
