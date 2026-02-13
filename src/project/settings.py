@@ -30,7 +30,18 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = os.getenv("DEBUG") == "True"
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["jhonessn.com", "www.jhonessn.com"]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://www.jhonessn.com",
+    "https://jhonessn.com",
+]
+
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 # Application definition
