@@ -1,5 +1,5 @@
 Portfolio Pessoal - Full Stack
-Este é o meu Portfólio Profissional, desenvolvido para centralizar meus projetos, experiências e habilidades técnicas. A aplicação foi construída utilizando Django para uma gestão de conteúdo dinâmica e Docker para garantir um ambiente de implantação moderno e isolado.
+Este é o meu Portfólio Profissional, desenvolvido para centralizar meus projetos, experiências e habilidades técnicas. A aplicação foi construída utilizando Django para uma gestão de conteúdo dinâmica.
 
 Propósito do Projeto
 O objetivo deste projeto é ir além de um site estático, demonstrando habilidades em:
